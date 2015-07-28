@@ -28,4 +28,6 @@ dependencies{
 	compile 'se.emilsjolander:intentbuilder-api:0.14.0'
 	apt 'se.emilsjolander:intentbuilder-compiler:0.14.0'
 
+	compile project(":javalibjokes")
+
 }

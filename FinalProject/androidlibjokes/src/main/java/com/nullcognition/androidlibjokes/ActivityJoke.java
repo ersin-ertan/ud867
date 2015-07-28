@@ -4,14 +4,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import se.emilsjolander.intentbuilder.Extra;
+import com.example.JokeFactory;
+
 import se.emilsjolander.intentbuilder.IntentBuilder;
 
 @IntentBuilder
 public class ActivityJoke extends AppCompatActivity{
 
-	@Extra
-	String joke;
+//	@Extra
+//	String joke;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -19,7 +20,7 @@ public class ActivityJoke extends AppCompatActivity{
 		setContentView(R.layout.activity_joke);
 		ActivityJokeIntentBuilder.inject(getIntent(), this);
 
-		((TextView) findViewById(R.id.txtJoke)).setText(joke);
+		((TextView) findViewById(R.id.txtJoke)).setText(JokeFactory.getJoke());
 
 	}
 
