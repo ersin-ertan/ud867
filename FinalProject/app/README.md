@@ -1,0 +1,1 @@
+## You cannot commit a build variant unless you select in for the specific variant, I was trying to commit the free variant while in the paid variant, thus I switched over and committed the files then pushed.
