@@ -1,11 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android{
 	compileSdkVersion 22
 	buildToolsVersion "22.0.1"
 
 	defaultConfig{
-		applicationId "com.udacity.gradle.builditbigger"
 		minSdkVersion 14
 		targetSdkVersion 22
 		versionCode 1
@@ -17,21 +17,15 @@ android{
 			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 		}
 	}
-
-	productFlavors{
-		free{ applicationId "com.udacity.gradle.builditbigger.free" }
-		paid{ applicationId "com.udacity.gradle.builditbigger.paid" }
-	}
-
 }
 
 dependencies{
 	compile fileTree(dir: 'libs', include: ['*.jar'])
-
 	compile 'com.android.support:appcompat-v7:22.2.1'
-	// Added for AdMob
-	compile 'com.google.android.gms:play-services:7.5.0'
-	compile project(":androidlibjokes")
-	compile project(":javalibjokes")
+
+//	compile 'com.jakewharton:butterknife:7.0.1' // does not work in library projects
+
+	compile 'se.emilsjolander:intentbuilder-api:0.14.0'
+	apt 'se.emilsjolander:intentbuilder-compiler:0.14.0'
 
 }
