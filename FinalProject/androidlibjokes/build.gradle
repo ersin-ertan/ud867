@@ -21,13 +21,14 @@ android{
 
 dependencies{
 	compile fileTree(dir: 'libs', include: ['*.jar'])
-	compile 'com.android.support:appcompat-v7:22.2.1'
 
 //	compile 'com.jakewharton:butterknife:7.0.1' // does not work in library projects
 
-	compile 'se.emilsjolander:intentbuilder-api:0.14.0'
 	apt 'se.emilsjolander:intentbuilder-compiler:0.14.0'
 
-	compile project(":javalibjokes")
 
+
+	compile 'com.android.support:appcompat-v7:22.2.1'
+	compile 'se.emilsjolander:intentbuilder-api:0.14.0'
+	compile project(path: ':jokebackend', configuration: 'android-endpoints')
 }
