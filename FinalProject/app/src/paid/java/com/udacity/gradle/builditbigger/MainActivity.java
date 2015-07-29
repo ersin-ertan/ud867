@@ -15,7 +15,7 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.nullcognition.androidlibjokes.ActivityJokeIntentBuilder;
 
 import java.io.IOException;
-`
+
 public class MainActivity extends AppCompatActivity{
 
 	@Override
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity{
 
 
 	public void tellJoke(View view){
-		new EndpointsAsyncTask().execute(new Pair<Context, String>(this, ""));
+		new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "T"));
 	}
 
 

@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity{
 
 	public void tellJoke(View view){
 		showInterstitial();
-		new EndpointsAsyncTask().execute(new Pair<Context, String>(this, ""));
+		new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "T"));
+		// had a 404 error because of "" blank input, either have some text or fix the backend implementation api, to not ask for a string, 0 parameters
 	}
 
 
