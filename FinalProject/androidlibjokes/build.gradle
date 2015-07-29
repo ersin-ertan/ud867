@@ -30,5 +30,4 @@ dependencies{
 
 	compile 'com.android.support:appcompat-v7:22.2.1'
 	compile 'se.emilsjolander:intentbuilder-api:0.14.0'
-	compile project(path: ':jokebackend', configuration: 'android-endpoints')
 }

@@ -19,8 +19,10 @@ android{
 	}
 
 	productFlavors{
-		free{ applicationId "com.udacity.gradle.builditbigger.free" }
-		paid{ applicationId "com.udacity.gradle.builditbigger.paid" }
+		free{ applicationId "com.udacity.gradle.builditbigger.free"
+		}
+		paid{ applicationId "com.udacity.gradle.builditbigger.paid"
+		}
 	}
 
 }
@@ -30,8 +32,9 @@ dependencies{
 
 	compile 'com.android.support:appcompat-v7:22.2.1'
 	// Added for AdMob
-	compile 'com.google.android.gms:play-services:7.5.0'
+	freeCompile 'com.google.android.gms:play-services:7.5.0'
 	compile project(":androidlibjokes")
+	compile project(path: ':jokebackend', configuration: 'android-endpoints')
 
 
 }
