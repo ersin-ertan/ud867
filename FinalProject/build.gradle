@@ -18,5 +18,18 @@ allprojects{
 	}
 }
 
-task testTask(description: "Launches the GCE local development server, Runs all tests, Shuts the server down again",
-		group: "Test") << { ':jokebackend:google app engine:appengineRun' }
+task launchLocalDevServer(description: "Launch GCE local dev server", group: "Test"){
+	':jokebackend:appengineRun'
+}
+
+task tests(description: "run all tests", group: "test"){
+	dependsOn = ['launchLocalDevServer']
+	':app:assembleFreeDebugAndroidTest'
+	':app:assemblePaidDebugAndroidTest'
+	finalizedBy 'stopLocalDevServer'
+}
+
+task stopLocalDevServer(description: "Shut server down", group: "Test"){
+	dependsOn = ['tests']
+	':jokebackend:appengineStop'
+}
